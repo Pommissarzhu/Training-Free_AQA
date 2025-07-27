@@ -45,7 +45,7 @@ frame_number = 0
 
 while success:
     # 构造输出文件名 (四位数字编号，确保排序正确)
-    frame_filename = os.path.join(output_path, f"frame_{frame_number:04d}.jpg")
+    frame_filename = os.path.join(output_path, f"{frame_number:04d}.jpg")
     
     # 保存帧图像
     # cv2.imwrite(frame_filename, frame)
