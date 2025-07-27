@@ -1,8 +1,7 @@
 import os
 
-frame_path = os.path.join("output", "fisv_001")
 
-def sliding_window(frame_num, size=10, step=5):
+def sliding_window(frame_path, frame_num, size=10, step=5):
     window_list = []
     # 遍历起始位置，步长为step
     start = 0
@@ -23,6 +22,8 @@ def sliding_window(frame_num, size=10, step=5):
     return window_list
 
 if __name__ == "__main__":
+    frame_path = os.path.join("output", "fisv_001")
+    
     # 检查目录是否存在
     if not os.path.exists(frame_path):
         print(f"错误: 目录 {frame_path} 不存在")
@@ -36,5 +37,5 @@ if __name__ == "__main__":
 
     print(f"目录 {frame_path} 下共有 {frame_count} 个JPG视频帧")
 
-    f_list = sliding_window(frame_num=frame_count)
+    f_list = sliding_window(frame_path, frame_num=frame_count)
     print(f_list)
